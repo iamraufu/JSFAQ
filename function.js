@@ -1,20 +1,29 @@
 numbers = [5, 12, 23, 11, 29, 40];
 age = [13, 17, 15, 19, 21, 23];
 
-allEvenOddCheck(numbers);
-allEvenOddCheck(age);
+// allEvenOddCheck(numbers);
+// allEvenOddCheck(age);
 
 function evenOddCheck(num) {
     if (num % 2 == 0)
-        console.log(num, ': is even number')
+        return num;
     else {
-        console.log(num * 2, ': is odd number')
+        return num * 2;
     }
 }
 
+var result = evenOddCheck(13);
+var square = result * result;
+console.log("square", square);
+
 function allEvenOddCheck(nums) {
+    var even_array = [];
     for (let index = 0; index < nums.length; index++) {
         const element = nums[index];
-        evenOddCheck(element);
+        var result = evenOddCheck(element);
+        even_array.push(result);
     }
+    return even_array;
 }
+var numbers_even = allEvenOddCheck(numbers);
+console.log(numbers_even);
