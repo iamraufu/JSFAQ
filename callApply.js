@@ -33,8 +33,11 @@ const worsePerson = {
 
 const betterExpenses = person.expenses.bind(betterPerson);
 betterExpenses(2000);
-console.log(betterPerson.salary)
+console.log('Better Person Salary:', betterPerson.salary);
 
 const worseExtraIncome = person.extraIncome.bind(worsePerson);
 worseExtraIncome(80);
-console.log(worsePerson.salary)
+console.log('Worse Person Salary:', worsePerson.salary);
+
+person.expenses.call(betterPerson, 200);
+console.log('Better Person Extra Income:', person.expenses(100))
