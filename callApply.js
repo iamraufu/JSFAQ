@@ -6,13 +6,17 @@ const person = {
         console.log(this.firstName, this.lastName);
     },
     expenses: function(amount) {
-        console.log(this);
+        // console.log(this);
         this.salary -= amount;
         return this.salary;
     },
     extraIncome: function(amount) {
         this.salary += amount * 30;
         return this.salary;
+    },
+    tax: function(amount) {
+        this.salary = this.salary - amount
+        return this.salary
     }
 }
 
@@ -41,3 +45,8 @@ console.log('Worse Person Salary:', worsePerson.salary);
 
 person.expenses.call(betterPerson, 200);
 console.log('Better Person Extra Income:', person.expenses(100))
+
+person.tax.call(worsePerson)
+console.log("Worse Person: ", person.tax(400))
+
+person.tax.apply(betterPerson, [400, 40, 50])
